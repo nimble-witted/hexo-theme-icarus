@@ -1,10 +1,10 @@
 common:
     archive:
-        one: '归档'
-        other: '归档'
+        one: '时光轴'
+        other: '时光轴'
     category:
-        one: '分类'
-        other: '分类'
+        one: '目录'
+        other: '目录'
     tag:
         one: '标签'
         other: '标签'
@@ -17,7 +17,7 @@ widget:
     follow: '关注我'
     recents: '最新文章'
     links: '链接'
-    tag_cloud: '标签云'
+    tag_cloud: '词云'
     catalogue: '目录'
 article:
     more: '阅读更多'
@@ -40,6 +40,6 @@ insight:
     hint: '想要查找什么...'
     posts: '文章'
     pages: '页面'
-    categories: '分类'
+    categories: '目录'
     tags: '标签'
     untitled: '(无标题)'
