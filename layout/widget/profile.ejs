@@ -22,20 +22,20 @@
                         <img class="image is-128x128 has-mb-6" src="<%= avatar() %>" alt="<%= get_config_from_obj(widget, 'author') %>">
                     <% } %>
                     <% if (get_config_from_obj(widget, 'author')) { %>
-                    <p class="is-size-4 is-block">
-                        <%= get_config_from_obj(widget, 'author') %>
-                    </p>
+                        <p class="is-size-4 is-block">
+                            <%= get_config_from_obj(widget, 'author') %>
+                        </p>
                     <% } %>
                     <% if (get_config_from_obj(widget, 'author_title')) { %>
-                    <p class="is-size-6 is-block">
-                        <%= get_config_from_obj(widget, 'author_title') %>
-                    </p>
+                        <p class="is-size-6 is-block">
+                            <%= get_config_from_obj(widget, 'author_title') %>
+                        </p>
                     <% } %>
                     <% if (get_config_from_obj(widget, 'location')) { %>
-                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
-                        <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span><%= get_config_from_obj(widget, 'location') %></span>
-                    </p>
+                        <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                            <i class="fas fa-map-marker-alt has-mr-7"></i>
+                            <span><%= get_config_from_obj(widget, 'location') %></span>
+                        </p>
                     <% } %>
                 </div>
             </div>
@@ -46,9 +46,11 @@
                     <p class="heading">
                         <%= _p('common.post', post_count()) %>
                     </p>
-                    <p class="title has-text-weight-normal">
-                        <%= post_count() %>
-                    </p>
+                    <a href="/archives/">
+                        <p class="title has-text-weight-normal">
+                            <%= post_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
@@ -56,9 +58,11 @@
                     <p class="heading">
                         <%= _p('common.category', category_count()) %>
                     </p>
-                    <p class="title has-text-weight-normal">
-                        <%= category_count() %>
-                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            <%= category_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
@@ -66,9 +70,11 @@
                     <p class="heading">
                         <%= _p('common.tag', tag_count()) %>
                     </p>
-                    <p class="title has-text-weight-normal">
-                        <%= tag_count() %>
-                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            <%= tag_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -78,19 +84,19 @@
         </div>
         <% const socialLinks = get_config_from_obj(widget, 'social_links'); %>
         <% if (socialLinks !== null) { %>
-        <div class="level is-mobile">
-            <% for (let name in socialLinks) {
+            <div class="level is-mobile">
+                <% for (let name in socialLinks) {
                     let link = socialLinks[name]; %>
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="<%= name %>" href="<%= url_for(typeof(link) === 'string' ? link : link.url) %>">
-                <% if (typeof(link) === 'string') { %>
-                <%= name %>
-                <% } else { %>
-                <i class="<%= link.icon %>"></i>
+                <a class="level-item button is-white is-marginless" target="_blank"
+                   title="<%= name %>" href="<%= url_for(typeof(link) === 'string' ? link : link.url) %>">
+                    <% if (typeof(link) === 'string') { %>
+                        <%= name %>
+                    <% } else { %>
+                        <i class="<%= link.icon %>"></i>
+                    <% } %>
+                </a>
                 <% } %>
-            </a>
-            <% } %>
-        </div>
+            </div>
         <% } %>
     </div>
 </div>
